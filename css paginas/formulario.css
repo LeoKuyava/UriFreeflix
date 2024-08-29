@@ -1,0 +1,252 @@
+/*-----------------------------------------Página Formulario --------------------------------*/
+* {
+    font-family: "Fira Sans", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Inclui padding e bordas na largura total */
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    /* Remove a rolagem horizontal */
+}
+
+body {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/imagens/fundoNovo.jpg);
+    /* Escurece a imagem de fundo */
+    background-size: cover;
+    /* Ajusta o tamanho da imagem de fundo */
+    background-position: center;
+    /* Centraliza a imagem de fundo */
+}
+
+header {
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    transition: padding 0.3s;
+    /* Suaviza a transição do padding ao redimensionar */
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header nav div a {
+    color: red;
+    text-decoration: none;
+    font-weight: 950;
+    font-size: 2.5rem;
+    transition: color 0.3s, font-size 0.3s;
+    cursor: pointer;
+    /* Suaviza transições de cor e tamanho da fonte */
+}
+
+header nav div a:hover {
+    color: #ffffff;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    /* Ajuste de padding para uniformidade */
+    bottom: 0;
+    width: 100%;
+    color: #ffffff;
+}
+
+/* Tornar o fieldset mais flexível para dispositivos móveis */
+fieldset {
+    width: 100%;
+    /* Use 100% para ocupação completa no modo responsivo */
+    max-width: 400px;
+    /* Limite de largura para evitar o esticamento excessivo */
+    margin: 0 auto;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #807e7e, #161616);
+    box-shadow: 3px 3px 11px rgb(0, 0, 0);
+    padding: 20px;
+    border: none;
+    z-index: 1000;
+}
+
+/* Flexível para que inputs e labels se alinhem corretamente */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    /* Permitir que os elementos se movam para a próxima linha em telas menores */
+}
+
+label {
+    font-weight: bold;
+    width: 100%;
+    /* Em telas pequenas, ocupar 100% da largura */
+    margin-bottom: 5px;
+    /* Espaço entre o label e o input */
+}
+
+/* Estilos de input responsivos */
+input,
+select,
+textarea {
+    border-radius: 4px;
+    padding: 5px;
+    margin: 2px 0;
+    /* Ajustar a margem para um melhor espaçamento vertical */
+    flex-grow: 1;
+    /* Permitir que o input ocupe o espaço restante */
+    width: 100%;
+    /* Em telas menores, garantir que o input ocupe 100% da largura */
+    box-sizing: border-box;
+    /* Inclui padding e border na largura total */
+}
+
+h1 {
+    color: #e50914;
+    text-align: center;
+    font-size: 2rem;
+}
+
+body .espaco {
+    margin-top: 80px;
+}
+
+/* Estilos de botão */
+button {
+    padding: 7px 15px;
+    border-radius: 4px;
+    border: none;
+    color: #fffefe;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #e50914;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    border: none;
+}
+
+.button:hover {
+    background-color: #9b1515;
+}
+
+/* Alinhamento central para os botões */
+.form-group.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+button.btn-enviar,
+button.btn-limpar {
+    background-color: #e50914;
+}
+
+/*----------------------------------------- Responsividade --------------------------------*/
+
+/* Ajustes para telas menores que 1024px */
+@media (max-width: 1024px) {
+    header {
+        padding: 10px 20px;
+        /* Reduz o padding em telas médias */
+    }
+
+    header nav div a {
+        font-size: 3rem;
+        /* Reduz o tamanho da fonte para responsividade */
+        margin-bottom: 30px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+
+    body .espaco {
+        margin-top: 120px;
+    }
+}
+
+/* Ajustes para telas menores que 768px */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 30px;
+        flex-direction: column;
+        /* Empilha itens em telas menores */
+        align-items: center;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+
+    footer {
+        padding: 10px;
+        /* Reduz o padding em telas menores */
+    }
+
+    header nav {
+        flex-direction: column;
+        /* Ajusta a navegação para ser vertical */
+    }
+
+    header nav div a {
+        font-size: 2.5rem;
+        margin-bottom: 2px;
+    }
+}
+
+/* Ajustes para telas menores que 480px */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 20px;
+        /* Reduz ainda mais o padding */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    header nav div a {
+        font-size: 2.5rem;
+        /* Reduz ainda mais o tamanho da fonte */
+    }
+}
+
+/* Ajustes de responsividade para o footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 10px;
+        /* Reduz o padding em telas menores */
+    }
+}
